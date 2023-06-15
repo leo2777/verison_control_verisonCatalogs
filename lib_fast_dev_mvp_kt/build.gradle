@@ -4,14 +4,14 @@ plugins {
 }
 
 android {
-    compileSdk rootProject.ext.android.compileSdk
+    compileSdk libs.versions.compileSdk.get().toInteger()
 
     defaultConfig {
-        minSdk rootProject.ext.android.minSdk
-        targetSdk rootProject.ext.android.targetSdk
+        minSdk libs.versions.minSdk.get().toInteger()
+        targetSdk libs.versions.targetSdk.get().toInteger()
 
-        testInstrumentationRunner rootProject.ext.android.testInstrumentationRunner
-        consumerProguardFiles rootProject.ext.android.consumerProguardFiles
+        testInstrumentationRunner libs.versions.testInstrumentationRunner.get()
+        consumerProguardFiles libs.versions.consumerProguardFiles.get()
     }
 
     buildTypes {
@@ -34,48 +34,44 @@ android {
 
 dependencies {
 
-    implementation rootProject.ext.dependencies.coreKtx
-    implementation rootProject.ext.dependencies.appcompat
-    implementation rootProject.ext.dependencies.material
+    //基础
+    implementation libs.bundles.android.base
 
-    //网络请求
-    api rootProject.ext.dependencies.retrofit
-    api rootProject.ext.dependencies.retrofitGson
-    api rootProject.ext.dependencies.retrofitRxJava
-    api rootProject.ext.dependencies.okHttp
-    api rootProject.ext.dependencies.okHttpLogging
-    api rootProject.ext.dependencies.glide
-    api rootProject.ext.dependencies.glideTransformations
-    api rootProject.ext.dependencies.gson
+    //网络
+    api libs.bundles.net
+
+    //smart_refresh 刷新
+    api libs.bundles.smart.refresh
+
+    //glide图片加载
+    api libs.imp.glide
+    api libs.imp.glideTransformations
 
     //rx
-    api rootProject.ext.dependencies.rxAndroid
-    api rootProject.ext.dependencies.rxJava
-    api rootProject.ext.dependencies.rxBus
+    api libs.imp.rxAndroid
+    api libs.imp.rxJava
+    api libs.imp.rxBus
 
     //gif加载框架
-    api rootProject.ext.dependencies.gifView
+    api libs.imp.gifView
 
     //logger 日志管理
-    api rootProject.ext.dependencies.logger
+    api libs.imp.logger
 
     //toasty 颜色吐司
-    api rootProject.ext.dependencies.toasty
+    api libs.imp.toasty
 
     //布局适配
-    api rootProject.ext.dependencies.autoSize
+    api libs.imp.autoSize
 
     //recyclerView 万能适配器  https://github.com/CymChad/BaseRecyclerViewAdapterHelper/wiki
-    api rootProject.ext.dependencies.adapterHelper
+    api libs.imp.adapterHelper
 
     //流式布局
-    api rootProject.ext.dependencies.flexBoxLayout
+    api libs.imp.flexBoxLayout
 
     //dataStore(替换 SP)
-    api rootProject.ext.dependencies.dataStore
-    api rootProject.ext.dependencies.dataStoreCore
+    api libs.imp.dataStore
+    api libs.imp.dataStoreCore
 
-    testImplementation rootProject.ext.dependencies.junit
-    androidTestImplementation rootProject.ext.dependencies.testJunit
-    androidTestImplementation rootProject.ext.dependencies.espresso
 }
