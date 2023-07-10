@@ -34,6 +34,38 @@ android {
 
 dependencies {
 
+    // project.versions.toml 文件模式
+    implementation libs.bundles.andorid.base
+
+    api libs.bundles.smart.refresh
+
+    api libs.bundles.net
+
+    api libs.bundles.junit
+
+    api libs.glide
+    api libs.glideTransformations
+
+    api libs.rxAndroid
+    api libs.rxJava
+    api libs.rxBus
+
+    api libs.gifView
+
+    api libs.logger
+
+    api libs.toasty
+
+    api libs.autoSize
+
+    api libs.adapterHelper
+
+    api libs.flexBoxLayout
+
+    api libs.dataStoreCore
+    api libs.dataStore
+
+/* setting.gradle 文件添加方式
     //基础
     implementation libs.bundles.android.base
 
@@ -73,5 +105,5 @@ dependencies {
     //dataStore(替换 SP)
     api libs.imp.dataStore
     api libs.imp.dataStoreCore
-
+ */
 }

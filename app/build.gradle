@@ -12,9 +12,9 @@ android {
         minSdk libs.versions.minSdk.get().toInteger()
         targetSdk libs.versions.targetSdk.get().toInteger()
         versionCode libs.versions.versionCode.get().toInteger()
-        versionName libs.versions.versionName.get()
+        versionName libs.versions.versionName.get().toString()
 
-        testInstrumentationRunner libs.versions.testInstrumentationRunner.get()
+        testInstrumentationRunner libs.versions.testInstrumentationRunner.get().toString()
     }
 
     buildTypes {
@@ -40,16 +40,17 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':lib_fast_dev_mvp_kt')
 
+    implementation libs.bundles.andorid.base
 
     //方式1
-    implementation libs.imp.coreKtx
-    implementation libs.imp.appcompat
-    implementation libs.imp.material
-    implementation libs.imp.junit
-    implementation libs.imp.testJunit
-    implementation libs.imp.espresso
+//    implementation libs.imp.coreKtx
+//    implementation libs.imp.appcompat
+//    implementation libs.imp.material
+//    implementation libs.imp.junit
+//    implementation libs.imp.testJunit
+//    implementation libs.imp.espresso
 
-    //进阶
-//    implementation libs().bundles.android
+    //方式2
+//    implementation libs.bundles.android
 
 }

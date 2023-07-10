@@ -167,14 +167,14 @@ open class GlideLoaderProcessor(options: ImageOptions?) : ImageProxy {
         height: Int,
     ): ImageProxy {
         if (view is ImageView) {
-            options.context?.let {
-                Glide
-                    .with(it)
-                    .setDefaultRequestOptions(requestOptions)
-                    .load(url)
-                    .override(width, height)
-                    .into(view)
-            }
+//            options.context?.let {
+//                Glide
+//                    .with(it)
+//                    .setDefaultRequestOptions(requestOptions)
+//                    .load(url)
+//                    .override(width, height)
+//                    .into(view)
+//            }
         }
         return obtain()
     }
